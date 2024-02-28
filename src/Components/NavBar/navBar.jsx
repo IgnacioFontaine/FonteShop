@@ -13,9 +13,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -122,11 +121,11 @@ export default function NavBar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
+          <Badge badgeContent={0} color="error">
+            <ShoppingCartIcon />
           </Badge>
         </IconButton>
-        <p>Messages</p>
+        <p>Carrrito</p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -134,11 +133,11 @@ export default function NavBar() {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
+          <Badge badgeContent={3} color="error">
+            <FavoriteIcon />
           </Badge>
         </IconButton>
-        <p>Notifications</p>
+        <p>Me Gusta</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -189,7 +188,7 @@ export default function NavBar() {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
-                <MailIcon />
+                <ShoppingCartIcon />
               </Badge>
             </IconButton>
             <IconButton
@@ -198,7 +197,7 @@ export default function NavBar() {
               color="inherit"
             >
               <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+                <FavoriteIcon />
               </Badge>
             </IconButton>
             <IconButton
