@@ -11,7 +11,6 @@ function App() {
         <NavBar></NavBar>
       </div>
       <div>
-        <h2>Body</h2>
         <ProductCard></ProductCard>
       </div>
       <div>
