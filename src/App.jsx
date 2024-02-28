@@ -1,7 +1,7 @@
 import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css"
-import { ProductCard } from './Components/Product/productCard';
 import { NavBar } from './Components/NavBar/navBar';
+import ProductCard from './Components/Product/productCard';
 
 function App() {
 
