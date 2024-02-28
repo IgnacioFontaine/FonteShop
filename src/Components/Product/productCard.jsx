@@ -33,14 +33,14 @@ const productIphone = {
 export default function ProductCard() {
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 300, backgroundColor:'#FFA657' }}>
       <CardHeader
         title={productIphone.title}
         subheader={productIphone.category}
       />
       <CardMedia
         component="img"
-        height="194"
+        height="160"
         image={productIphone.images[3]}
         alt={productIphone.title}
       />
