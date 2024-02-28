@@ -14,7 +14,7 @@ function App() {
         <ProductCard></ProductCard>
       </div>
       <div>
-        <h2>Footer</h2>
+        <h5>Footer</h5>
       </div>
     </div>
   )
