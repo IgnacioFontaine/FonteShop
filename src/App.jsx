@@ -5,9 +5,18 @@ import { ProductCard } from './Components/Product/productCard';
 function App() {
 
   return (
-    <div>
-      <h1 className="container py-4 px-3 mx-auto bg-blue">FontShop</h1>
-      <ProductCard></ProductCard>
+    <div className='app'>
+      <div>
+        <h1>FontShop</h1>
+        <h2>Esta es la NavBar</h2>
+      </div>
+      <div>
+        <h2>Body</h2>
+        <ProductCard></ProductCard>
+      </div>
+      <div>
+        <h2>Footer</h2>
+      </div>
     </div>
   )
 }
