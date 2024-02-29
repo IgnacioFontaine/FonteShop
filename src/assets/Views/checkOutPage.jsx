@@ -16,7 +16,7 @@ export default function CheckOutPage() {
   }
   function Purchease() {
     return (
-      <Box container sx={{ maxWidth: 400, maxHeight:450, backgroundColor:'#FFA657', color: "black", borderRadius: 2, boxShadow: 6, p:1  }}>
+      <Box container sx={{ maxWidth: 400, maxHeight:450, backgroundColor:'#FFA657', color: "black", borderRadius: 2, boxShadow: 6, p:1, mr:2  }}>
             <Typography variant="h4" fontFamily={"fantasy"}>Purchase Summary</Typography>
             <Typography variant="h5">Items:</Typography>
             <Typography variant="h5">Total:</Typography>

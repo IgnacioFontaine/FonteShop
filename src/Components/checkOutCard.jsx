@@ -24,9 +24,9 @@ export default function CheckOutCard({product}) {
         alt={product.title}
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary" sx={{ maxHeight: 25, p: 1, gap: 2, justifyContent: "center", alignItems: "center" }}>
-          <StarRateIcon />
-          {product.rating}
+        <Typography variant="subtitle1" color="text.secondary" sx={{ maxHeight: 25, p: 1, gap: 2, justifyContent: "center", alignItems: "center" }}>
+          
+          <StarRateIcon fontSize="small"/>{product.rating} /5 
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={{alignContent:"center", justifyContent:"space-evenly"}}>
