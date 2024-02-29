@@ -11,7 +11,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 export default function ProductCard({product}) {
   const { id, title, description, price, category, thumbnail } = product;
   return (
-    <Card sx={{ maxWidth: 300, backgroundColor:'#FFA657' }} key={id}>
+    <Card sx={{ maxWidth: 300, maxHeight:400, backgroundColor:'#FFA657' }} key={id}>
       <CardHeader
         title={product.title}
         subheader={product.category}
@@ -23,7 +23,7 @@ export default function ProductCard({product}) {
         alt={product.title}
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" sx={{maxHeight:40}}>
           {product.description}
         </Typography>
       </CardContent>
