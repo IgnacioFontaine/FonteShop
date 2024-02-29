@@ -1,9 +1,10 @@
+import { Box } from "@mui/material";
 import { Products } from "../../Components/products";
-import CheckOutPage from "./checkOutPage";
 
 export default function Home() {
   return (
-    // <Products />
-    <CheckOutPage></CheckOutPage>
+    <Box sx={{ mt: 1.5, ml:5}}>
+      <Products />
+    </Box>
   )
 }
