@@ -13,10 +13,16 @@ const initialState = {
 //Config reducer
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ACTION_TYPES.GET_ALL_PRODUCTS:
+    case ACTION_TYPES.ADD_TO_SHOP:
       return {
-        
+        ...state,
+        shop_product:[...state.shop_product, action.payload]
       }
+    case ACTION_TYPES.REMOVE_TO_SHOP:
+      return {
+        ...state,
+         shop_product: state.shop_product.filter(shop_product => shop_product.id !== action.payload)
+      };
 
     default:
       return {
