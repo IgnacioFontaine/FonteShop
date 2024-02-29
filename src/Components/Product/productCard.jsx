@@ -29,23 +29,22 @@ const productIphone = {
       ]
     }
 
-export default function ProductCard() {
-
+export default function ProductCard({id, title, description, price, category, thumbnail}) {
   return (
     <Card sx={{ maxWidth: 300, backgroundColor:'#FFA657' }}>
       <CardHeader
-        title={productIphone.title}
-        subheader={productIphone.category}
+        title={title}
+        subheader={category}
       />
       <CardMedia
         component="img"
         height="160"
-        image={productIphone.images[3]}
-        alt={productIphone.title}
+        image={thumbnail}
+        alt={title}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {productIphone.description}
+          {description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={{alignContent:"center", justifyContent:"space-evenly"}}>
@@ -57,7 +56,7 @@ export default function ProductCard() {
         </IconButton>
         <CardContent>
         <Typography variant="h6" color="text.secondary" >
-          ${productIphone.price}
+          ${price}
         </Typography>
       </CardContent>
       </CardActions>
