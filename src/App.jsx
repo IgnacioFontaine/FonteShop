@@ -7,6 +7,7 @@ import { Footer } from './Components/footer';
 import CheckOutPage from './assets/Views/checkOutPage';
 import SingIn from './assets/Views/singIn';
 import Error from './assets/Views/error';
+import LikedView from './assets/Views/likeView';
 
 function App() {
 
@@ -15,7 +16,8 @@ function App() {
       <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/purchease" element={<CheckOutPage />} />
+        <Route path="/purchease" element={<CheckOutPage />} />
+        <Route path="/favorites" element={<LikedView />} />
           <Route path="/singIn" element={<SingIn />} />
           <Route path="*" element={<Error />}  />
         </Routes>

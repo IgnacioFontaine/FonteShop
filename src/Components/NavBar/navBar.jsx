@@ -14,6 +14,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useNavigate } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -121,7 +122,7 @@ export default function NavBar() {
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={0} color="error">
-            <ShoppingCartIcon />
+            <ShoppingCartIcon onClick={()=>navigate("/purchease")}/>
           </Badge>
         </IconButton>
         <p>Carrrito</p>
@@ -133,7 +134,7 @@ export default function NavBar() {
           color="inherit"
         >
           <Badge badgeContent={3} color="error">
-            <FavoriteIcon />
+            <FavoriteIcon onClick={()=>navigate("/favorites")} />
           </Badge>
         </IconButton>
         <p>Me Gusta</p>
@@ -153,6 +154,8 @@ export default function NavBar() {
     </Menu>
   );
 
+  const navigate = useNavigate()
+
   return (
     <Box sx={{ flexGrow: 1, backgroundColor:"#FFA657" }}>
       <AppBar position="static" sx={{ backgroundColor:"#FFA657" }}>
@@ -161,8 +164,9 @@ export default function NavBar() {
             variant="h5"
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, cursor:"default" }}
-            
+            sx={{ display: { xs: 'none', sm: 'block', cursor: "pointer" } }}
+            fontFamily={"fantasy"}
+            onClick={()=>navigate("/")}
           >
             FonteShop
           </Typography>
@@ -179,7 +183,7 @@ export default function NavBar() {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
-                <ShoppingCartIcon />
+                <ShoppingCartIcon onClick={()=>navigate("/purchease")}/>
               </Badge>
             </IconButton>
             <IconButton
@@ -188,7 +192,7 @@ export default function NavBar() {
               color="inherit"
             >
               <Badge badgeContent={17} color="error">
-                <FavoriteIcon />
+                <FavoriteIcon onClick={()=>navigate("/favorites")} />
               </Badge>
             </IconButton>
             <IconButton
