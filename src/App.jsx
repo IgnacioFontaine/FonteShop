@@ -1,7 +1,7 @@
 import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css"
 import NavBar from './Components/NavBar/navBar';
-import Home from './assets/Views/Home/home';
+import Home from './assets/Views/home';
 import { Footer } from './Components/Footer/footer';
 import { Box } from '@mui/material';
 
