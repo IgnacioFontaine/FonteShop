@@ -2,7 +2,7 @@ import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css"
 import NavBar from './Components/NavBar/navBar';
 import Home from './assets/Views/home';
-import { Footer } from './Components/Footer/footer';
+import { Footer } from './Components/footer';
 import { Box } from '@mui/material';
 
 function App() {

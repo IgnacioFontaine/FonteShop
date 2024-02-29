@@ -1,6 +1,6 @@
-import ProductCard from "../Product/productCard";
+import ProductCard from "./Product/productCard";
 import { Grid } from "@mui/material";
-import products from "../../assets/Data/dataProducts";
+import products from "../assets/Data/dataProducts";
 
 export function Products() {
   return (
