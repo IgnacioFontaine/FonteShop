@@ -23,6 +23,17 @@ const reducer = (state = initialState, action) => {
         ...state,
          shop_product: state.shop_product.filter(shop_product => shop_product.id !== action.payload)
       };
+    
+    case ACTION_TYPES.ADD_TO_LIKE:
+      return {
+        ...state,
+        like_product:[...state.like_product, action.payload]
+      }
+    case ACTION_TYPES.REMOVE_TO_LIKE:
+      return {
+        ...state,
+         like_product: state.like_product.filter(like_product => like_product.id !== action.payload)
+      };
 
     default:
       return {
