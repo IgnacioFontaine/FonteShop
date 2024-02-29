@@ -8,22 +8,23 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-export default function ProductCard({id, title, description, price, category, thumbnail}) {
+export default function ProductCard({product}) {
+  const { id, title, description, price, category, thumbnail } = product;
   return (
     <Card sx={{ maxWidth: 300, backgroundColor:'#FFA657' }} key={id}>
       <CardHeader
-        title={title}
-        subheader={category}
+        title={product.title}
+        subheader={product.category}
       />
       <CardMedia
         component="img"
         height="160"
-        image={thumbnail}
-        alt={title}
+        image={product.thumbnail}
+        alt={product.title}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {description}
+          {product.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={{alignContent:"center", justifyContent:"space-evenly"}}>
@@ -35,7 +36,7 @@ export default function ProductCard({id, title, description, price, category, th
         </IconButton>
         <CardContent>
         <Typography variant="h6" color="text.secondary" >
-          ${price}
+          ${product.price}
         </Typography>
       </CardContent>
       </CardActions>
