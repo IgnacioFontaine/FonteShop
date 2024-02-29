@@ -82,7 +82,7 @@ const products = [
     category: "smartphones",
     thumbnail: "https://cdn.dummyjson.com/product-images/5/thumbnail.jpg",
     images: [
-      "https://cdn.dummyjson.com/product-images/5/1.jpg,"
+      "https://cdn.dummyjson.com/product-images/5/1.jpg",
       "https://cdn.dummyjson.com/product-images/5/2.jpg",
       "https://cdn.dummyjson.com/product-images/5/3.jpg"
     ]
