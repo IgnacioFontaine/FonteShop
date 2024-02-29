@@ -1,6 +1,7 @@
-import { Grid, Typography, Box } from "@mui/material";
+import { Grid, Typography} from "@mui/material";
 import products from "../Data/dataProducts";
 import CheckOutCard from "../../Components/checkOutCard";
+import { Total } from "../../Components/total";
 
 export default function CheckOutPage() {
 
@@ -14,16 +15,6 @@ export default function CheckOutPage() {
       
     </>)
   }
-  function Purchease() {
-    return (
-      <Box container sx={{ maxWidth: 400, maxHeight:450, backgroundColor:'#FFA657', color: "black", borderRadius: 2, boxShadow: 6, p:1, mr:2  }}>
-            <Typography variant="h4" fontFamily={"fantasy"}>Purchase Summary</Typography>
-            <Typography variant="h5">Items:</Typography>
-            <Typography variant="h5">Total:</Typography>
-            <button>Buy</button>
-          </Box>
-    )
-  }
     
   return (
     <div>
@@ -35,7 +26,7 @@ export default function CheckOutPage() {
           <ShopProducts  />
         </Grid>
         <Grid item xs={12} sm={4} md={3} sx={{alignContent:"center"}}>
-          <Purchease />
+          <Total />
         </Grid>
       </Grid>
     </div>
