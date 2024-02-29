@@ -3,7 +3,6 @@ import { Grid } from "@mui/material";
 import products from "../../assets/Data/dataProducts";
 
 export function Products() {
-  console.log(products);
   return (
     <Grid container spacing={{ xs: 1, md: 1 }} columns={{ xs: 3, sm: 6, md: 12 }}>
         {products.map((product)=> (
