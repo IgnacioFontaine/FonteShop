@@ -25,7 +25,7 @@ const products = [
     price: 899,
     discountPercentage: "17.94",
     rating: 4.44,
-    stock: 34,
+    stock: 0,
     brand: "Apple",
     category: "smartphones",
     thumbnail: "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",

@@ -9,11 +9,12 @@ import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import StarRateIcon from '@mui/icons-material/StarRate';
 
 export default function CheckOutCard({product}) {
-  const { id, title, description, price, rating, thumbnail } = product;
+  const { id, title, description, price, rating, thumbnail, stock } = product;
   return (
     <Card sx={{ maxWidth: 300, maxHeight:400, backgroundColor:'#FFA657' }} key={id}>
       <CardHeader
         title={product.title}
+        subheader={stock >= 1 ? "In Stock":"Not Stock"}
         sx={{  maxHeight:65 }}
       />
       <CardMedia
