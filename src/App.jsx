@@ -3,21 +3,23 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import NavBar from './Components/NavBar/navBar';
 import Home from './assets/Views/home';
 import { Footer } from './Components/footer';
-import { Box } from '@mui/material';
+import { Route, Routes } from "react-router-dom";
+import CheckOutPage from './assets/Views/checkOutPage';
+import SingIn from './assets/Views/singIn';
+import Error from './assets/Views/error';
 
 function App() {
 
   return (
     <div className='app'>
-      <div className='navbar'>
-        <NavBar />
-      </div>
-      <Box sx={{ml:7}}>
-        <Home />
-      </Box>
-      <div>
-        <Footer />
-      </div>
+    <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/purchease" element={<CheckOutPage />} />
+        <Route path="/singIn" element={<SingIn />} />
+        <Route path="*" element={<Error />}  />
+      </Routes>
+    <Footer />
     </div>
   )
 }
