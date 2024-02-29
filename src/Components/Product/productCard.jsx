@@ -29,7 +29,6 @@ const productIphone = {
       ]
     }
 
-
 export default function ProductCard() {
 
   return (

@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import NavBar from './Components/NavBar/navBar';
 import Home from './assets/Views/Home/home';
 import { Footer } from './Components/Footer/footer';
+import { Box } from '@mui/material';
 
 function App() {
 
@@ -11,9 +12,9 @@ function App() {
       <div className='navbar'>
         <NavBar />
       </div>
-      <div>
+      <Box sx={{ml:7}}>
         <Home />
-      </div>
+      </Box>
       <div>
         <Footer />
       </div>
