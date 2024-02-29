@@ -1,6 +1,6 @@
 import { Grid, Typography, Box } from "@mui/material";
-import ProductCard from "../../Components/Product/productCard";
 import products from "../Data/dataProducts";
+import CheckOutCard from "../../Components/checkOutCard";
 
 export default function CheckOutPage() {
 
@@ -8,7 +8,7 @@ export default function CheckOutPage() {
     return (<>
       {products.map((item)=> (
         <Grid item xs={12} sm={8} md={6} lg={4} key={item.id}>
-            <ProductCard key={item.id} product={item} />
+            <CheckOutCard key={item.id} product={item} />
           </Grid>
         ))}
       
