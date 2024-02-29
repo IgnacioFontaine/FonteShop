@@ -56,7 +56,7 @@ export default function ProductCard() {
           <AddShoppingCartIcon />
         </IconButton>
         <CardContent>
-        <Typography variant="body1" color="text.secondary" >
+        <Typography variant="h6" color="text.secondary" >
           ${productIphone.price}
         </Typography>
       </CardContent>
