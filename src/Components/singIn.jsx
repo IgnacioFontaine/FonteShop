@@ -27,7 +27,7 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={defaultTheme}  >
-      <Container  maxWidth="xs" sx={{minHeight:578, minWidth:500 }} >
+      <Container  component="main" maxWidth="xs" >
         <CssBaseline  />
         <Box
           sx={{
@@ -35,6 +35,7 @@ export default function SignIn() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            p:5.7
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: '#FFA657', color:"black" }}>
@@ -83,7 +84,7 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2" sx={{textDecoration:"none"}}>
+                <Link href="/singUp" variant="body2" sx={{textDecoration:"none"}}>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
