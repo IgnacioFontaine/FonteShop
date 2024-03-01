@@ -29,7 +29,9 @@ export default function CheckOutPage() {
           <Typography variant="h2" fontFamily={"fantasy"}>Shopping Cart</Typography>
         </Grid>
         <Grid item xs={12} sm={8} md={9} container spacing={2}  >
-          <ShopProducts  />
+          {purchease_products.length >0 ?
+          <ShopProducts  />:<Typography variant="h2"fontFamily={"fantasy"} sx={{height:550, width:550, textAlign:"center", justifyContent:"center"}}>Return to buy products!</Typography>}
+          
         </Grid>
         <Grid item xs={12} sm={4} md={3} sx={{alignContent:"center"}}>
           <Total />
