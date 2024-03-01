@@ -5,20 +5,19 @@ import NavBar from './Components/NavBar/navBar';
 import Home from './assets/Views/home';
 import { Footer } from './Components/footer';
 import CheckOutPage from './assets/Views/checkOutPage';
-import SingIn from './assets/Views/singIn';
 import Error from './assets/Views/error';
 import LikedView from './assets/Views/likeView';
+import SingInView from './assets/Views/singInView';
 
 function App() {
-
   return (
     <div className='app'>
       <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-        <Route path="/purchease" element={<CheckOutPage />} />
-        <Route path="/favorites" element={<LikedView />} />
-          <Route path="/singIn" element={<SingIn />} />
+          <Route path="/purchease" element={<CheckOutPage />} />
+          <Route path="/favorites" element={<LikedView />} />
+          <Route path="/singIn" element={<SingInView />} />
           <Route path="*" element={<Error />}  />
         </Routes>
       <Footer />
