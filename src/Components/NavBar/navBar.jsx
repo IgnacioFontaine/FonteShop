@@ -105,8 +105,7 @@ export default function NavBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={()=>(navigate("/singIn"),handleMenuClose)} >Sing In</MenuItem>
     </Menu>
   );
 
@@ -154,6 +153,7 @@ export default function NavBar() {
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
+          onClick={()=>navigate("/singIn")}
         >
           <AccountCircle />
         </IconButton>
