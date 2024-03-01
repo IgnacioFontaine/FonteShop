@@ -8,13 +8,39 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { useDispatch } from 'react-redux';
-import { addToLike, addToShop } from '../../Redux/actions';
+import { addToLike, addToShop, removeToLike, removeToShop } from '../../Redux/actions';
+import { useState } from 'react';
 
 
 export default function ProductCard({ product }) {
   const { id, title, description, price, category, thumbnail } = product;
 
   const dispatch = useDispatch()
+  const [isShop, setIsShop] = useState(false);
+  const [isFav, setIsFav] = useState(false);
+
+  //Manejo Favoritos
+  const handleFavorite = () => {
+    if (isFav) {
+      setIsFav(false);
+      removeToLike(id);
+    } else {
+      setIsFav(true);
+      addToLike(product);
+    }
+  };
+
+
+  //Manejo Compras
+  const handleShop = () => {
+    if (isFav) {
+      setIsShop(false);
+      removeToShop(id);
+    } else {
+      setIsShop(true);
+      addToShop(product);
+    }
+  };
 
 
   return (
