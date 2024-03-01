@@ -15,25 +15,34 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+
+
 
 
 const defaultTheme = createTheme();
 
 export default function SignUp() {
   const navigate = useNavigate();
+  const auth = getAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const singUpFunction = (event) => {
-    event.preventDefault();
-    auth.createUserWithEmailAndPassword(email, password).then(
-      (auth) => {
-        console.log(auth);
-        navigate("/");
-      }
-    ).catch((err)=>alert(err.message))
-  };
+    event.preventDefault()
+
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    navigate("/");
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });};
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -41,11 +50,11 @@ export default function SignUp() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 5.3,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            p:4.85
+            p:9.2
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: '#FFA657', color:"black" }}>
@@ -54,7 +63,7 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" noValidate sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
