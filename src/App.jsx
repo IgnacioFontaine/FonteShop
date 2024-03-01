@@ -8,6 +8,8 @@ import CheckOutPage from './assets/Views/checkOutPage';
 import Error from './assets/Views/error';
 import LikedView from './assets/Views/likeView';
 import SingInView from './assets/Views/singInView';
+import SingUpView from './assets/Views/singUpView';
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Route path="/purchease" element={<CheckOutPage />} />
           <Route path="/favorites" element={<LikedView />} />
           <Route path="/singIn" element={<SingInView />} />
+          <Route path="/singUp" element={<SingUpView/>} />
           <Route path="*" element={<Error />}  />
         </Routes>
       <Footer />
