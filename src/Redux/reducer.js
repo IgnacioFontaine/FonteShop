@@ -12,6 +12,7 @@ const initialState = {
 
 //Config reducer
 const reducer = (state = initialState, action) => {
+  console.log(action);
   switch (action.type) {
     case ACTION_TYPES.ADD_TO_SHOP:
       return {
@@ -33,6 +34,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
          like_product: state.like_product.filter(like_product => like_product.id !== action.payload)
+      };
+    
+    case ACTION_TYPES.ERROR:
+      return {
+        ...state,
+        error: true,
       };
 
     default:
