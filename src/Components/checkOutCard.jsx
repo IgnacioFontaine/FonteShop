@@ -16,7 +16,7 @@ export default function CheckOutCard({product}) {
   const dispatch = useDispatch()
 
   return (
-    <Card sx={{ maxWidth: 300, maxHeight:400, backgroundColor:'#FFA657' }} key={id}>
+    <Card sx={{ maxWidth: 300, maxHeight:400, backgroundColor:'#FFA657' }} >
       <CardHeader
         title={product.title}
         subheader={stock >= 1 ? "In Stock":"Not Stock"}

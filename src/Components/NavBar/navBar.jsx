@@ -16,6 +16,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useNavigate } from 'react-router-dom';
 import store from '../../Redux/store';
+import { useEffect } from 'react';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -58,9 +59,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function NavBar() {
-  const subscribe_store = store.getState()  
-  const purchease_products = subscribe_store.products.shop_product;
-  const favorites_store = subscribe_store.products.like_products;
+    const subscribe_store = store.getState()
+    const purchease_products = subscribe_store.products.shop_product;
+    const favorites_store = subscribe_store.products.like_products;
+  
 
 
   const [anchorEl, setAnchorEl] = React.useState(null);
