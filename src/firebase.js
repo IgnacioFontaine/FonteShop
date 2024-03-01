@@ -1,5 +1,9 @@
-import firebase from "firebase"
+// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBidplg0fa66fK2DPCsuHm_pYMaCRGg8o8",
   authDomain: "fonteshop-d0e3e.firebaseapp.com",
@@ -9,8 +13,9 @@ const firebaseConfig = {
   appId: "1:706311134652:web:ce81ce8ecc2610498d9fb9"
 };
 
-const firebaseApp = firebase.initalizeApp(firebaseConfig);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
-const auth = firebase.auth();
+const auth = getAuth(app);
 
 export { auth };

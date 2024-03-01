@@ -12,18 +12,27 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState } from 'react';
+import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
 
 const defaultTheme = createTheme();
 
 export default function SignUp() {
-  const handleSubmit = (event) => {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const singUpFunction = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    auth.createUserWithEmailAndPassword(email, password).then(
+      (auth) => {
+        console.log(auth);
+        navigate("/");
+      }
+    ).catch((err)=>alert(err.message))
   };
 
   return (
@@ -47,27 +56,6 @@ export default function SignUp() {
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
@@ -76,17 +64,23 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  value={email}
+                  onChange={event=>setEmail(event.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  value={password}
+                  onChange={event=>setPassword(event.target.value)}
                   required
                   fullWidth
                   name="password"
                   label="Password"
                   type="password"
                   id="password"
+                  
                   autoComplete="new-password"
+                  
                 />
               </Grid>
               <Grid item xs={12}>
@@ -100,7 +94,8 @@ export default function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 ,bgcolor: '#FFA657', color:"black"}}
+              sx={{ mt: 3, mb: 2, bgcolor: '#FFA657', color: "black" }}
+              onClick={singUpFunction}
             >
               Sign Up
             </Button>
