@@ -15,6 +15,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useNavigate } from 'react-router-dom';
+import store from '../../Redux/store';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -57,6 +58,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function NavBar() {
+  const subscribe_store = store.getState()  
+  const purchease_products = subscribe_store.products.shop_product;
+  const favorites_store = subscribe_store.products.like_products;
+
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -121,7 +127,7 @@ export default function NavBar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={0} color="error">
+          <Badge badgeContent={purchease_products.length} color="error">
             <ShoppingCartIcon onClick={()=>navigate("/purchease")}/>
           </Badge>
         </IconButton>
@@ -133,7 +139,7 @@ export default function NavBar() {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={3} color="error">
+          <Badge badgeContent={favorites_store.length} color="error">
             <FavoriteIcon onClick={()=>navigate("/favorites")} />
           </Badge>
         </IconButton>
@@ -182,7 +188,7 @@ export default function NavBar() {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={purchease_products.length} color="error">
                 <ShoppingCartIcon onClick={()=>navigate("/purchease")}/>
               </Badge>
             </IconButton>
@@ -191,7 +197,7 @@ export default function NavBar() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
+              <Badge badgeContent={favorites_store.length} color="error">
                 <FavoriteIcon onClick={()=>navigate("/favorites")} />
               </Badge>
             </IconButton>
