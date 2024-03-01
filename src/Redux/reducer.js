@@ -37,9 +37,14 @@ const reducer = (state = initialState, action) => {
         like_products:[...state.like_products, action.payload]
       }
     case ACTION_TYPES.REMOVE_TO_LIKE:
+      const indexLike = state.like_products.findIndex(likeItem => likeItem.id == action.payload)
+      let newStateLike = [...state.like_products]
+      if (indexLike >= 0) {
+        newStateLike.splice(indexLike, 1);
+      }
       return {
         ...state,
-         like_product: state.like_product.filter(like_product => like_product.id !== action.payload)
+         like_product: newStateLike
       };
     
     case ACTION_TYPES.ERROR:

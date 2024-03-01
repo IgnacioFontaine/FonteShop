@@ -12,7 +12,7 @@ export default function LikedView() {
     return (<>
       {favorite_products.map((item)=> (
         <Grid item xs={12} sm={8} md={6} lg={4} key={item.id}>
-            <ProductCard key={item.id} product={item} />
+            <ProductCard  product={item} />
           </Grid>
         ))}
       
