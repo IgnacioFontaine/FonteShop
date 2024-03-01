@@ -126,7 +126,7 @@ export default function NavBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        <IconButton size="large" aria-label="show purchease products" color="inherit">
           <Badge badgeContent={purchease_products.length} color="error">
             <ShoppingCartIcon onClick={()=>navigate("/purchease")}/>
           </Badge>
@@ -136,7 +136,7 @@ export default function NavBar() {
       <MenuItem>
         <IconButton
           size="large"
-          aria-label="show 17 new notifications"
+          aria-label="show favorite products"
           color="inherit"
         >
           <Badge badgeContent={favorites_store.length} color="error">
@@ -187,14 +187,14 @@ export default function NavBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+            <IconButton size="large" aria-label="show purchease_products" color="inherit">
               <Badge badgeContent={purchease_products.length} color="error">
                 <ShoppingCartIcon onClick={()=>navigate("/purchease")}/>
               </Badge>
             </IconButton>
             <IconButton
               size="large"
-              aria-label="show 17 new notifications"
+              aria-label="show favorite products"
               color="inherit"
             >
               <Badge badgeContent={favorites_store.length} color="error">

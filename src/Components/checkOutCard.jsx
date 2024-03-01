@@ -7,9 +7,14 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import StarRateIcon from '@mui/icons-material/StarRate';
+import { removeToShop } from '../Redux/actions';
+import { useDispatch } from 'react-redux';
+
 
 export default function CheckOutCard({product}) {
   const { id, title, description, price, rating, thumbnail, stock } = product;
+  const dispatch = useDispatch()
+
   return (
     <Card sx={{ maxWidth: 300, maxHeight:400, backgroundColor:'#FFA657' }} key={id}>
       <CardHeader
@@ -25,13 +30,12 @@ export default function CheckOutCard({product}) {
       />
       <CardContent>
         <Typography variant="subtitle1" color="text.secondary" sx={{ maxHeight: 25, p: 1, gap: 2, justifyContent: "center", alignItems: "center" }}>
-          
           <StarRateIcon fontSize="small"/>{product.rating} /5 
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={{alignContent:"center", justifyContent:"space-evenly"}}>
-        <IconButton aria-label="delete">
-          <RemoveShoppingCartIcon />
+        <IconButton aria-label="delete" onClick={()=>dispatch(removeToShop(id))}>
+          <RemoveShoppingCartIcon  />
         </IconButton>
         <CardContent>
         <Typography variant="h6" color="text.secondary" >
