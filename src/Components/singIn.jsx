@@ -12,18 +12,31 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState } from 'react';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+  const navigate = useNavigate()
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const singInFunction = (event) => {
+    event.preventDefault()
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+      });
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}  >
@@ -44,7 +57,7 @@ export default function SignIn() {
           <Typography component="h1" variant="h3" fontFamily={"fantasy"}>
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -54,6 +67,8 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
+              value={email}
+              onChange={event=>setEmail(event.target.value)}
             />
             <TextField
               margin="normal"
@@ -64,6 +79,8 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={password}
+              onChange={event=>setPassword(event.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -73,7 +90,8 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 5, mb: 2,bgcolor: '#FFA657', color:"black" }}
+              sx={{ mt: 5, mb: 2, bgcolor: '#FFA657', color: "black" }}
+              onClick={singInFunction}
             >
               Sign In
             </Button>
