@@ -28,7 +28,7 @@ const reducer = (state = initialState, action) => {
     case ACTION_TYPES.ADD_TO_LIKE:
       return {
         ...state,
-        like_product:[...state.like_product, action.payload]
+        like_products:[...state.like_products, action.payload]
       }
     case ACTION_TYPES.REMOVE_TO_LIKE:
       return {
