@@ -6,7 +6,9 @@ import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';  
 import { useDispatch } from 'react-redux';
 import { addToLike, addToShop, removeToLike, removeToShop } from '../../Redux/actions';
 import { useState } from 'react';
@@ -30,6 +32,16 @@ export default function ProductCard({ product }) {
     }
   };
 
+  const favoriteButton = () => {
+    return (isFav ?
+      ( <IconButton aria-label="remoove to favorites" onClick = {() => dispatch(removeToLike(product))}>
+          <FavoriteBorderIcon  />
+        </IconButton>)
+    :
+      ( <IconButton aria-label="add to favorites" onClick = {() => dispatch(addToLike(product))}>
+          <FavoriteIcon  />
+        </IconButton>))}
+
 
   //Manejo Compras
   const handleShop = () => {
@@ -41,6 +53,16 @@ export default function ProductCard({ product }) {
       addToShop(product);
     }
   };
+  
+const shopButton = (product) => {
+    return (isShop ?
+      ( <IconButton aria-label="remoove to shop" onClick = {() => dispatch(removeToLike(product.id))}>
+          <RemoveShoppingCartIcon  />
+        </IconButton>)
+    :
+      ( <IconButton aria-label="add to shop" onClick = {() => dispatch(addToShop(product))}>
+          <AddShoppingCartIcon />
+        </IconButton>))}
 
 
   return (
