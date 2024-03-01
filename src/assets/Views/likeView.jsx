@@ -30,7 +30,6 @@ export default function LikedView() {
         <Grid item xs={12} sm={8} md={9} container spacing={3} sx={{ ml: 7, minHeight:500 }} >
           {favorite_products.length >0 ?
           <LikeProducts  />:<Typography variant="h2"fontFamily={"fantasy"} sx={{height:550, width:550, textAlign:"center", justifyContent:"center"}}>Not Favorites yet</Typography>}
-          
         </Grid>
         <Grid item xs={12}>
           <Typography variant="h4" fontFamily={"fantasy"}>They can be Yours!</Typography>

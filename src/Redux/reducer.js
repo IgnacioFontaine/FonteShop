@@ -19,10 +19,16 @@ const reducer = (state = initialState, action) => {
         ...state,
         shop_product:[...state.shop_product, action.payload]
       }
+    
     case ACTION_TYPES.REMOVE_TO_SHOP:
+      const index = state.shop_product.findIndex(shopItem => shopItem.id == action.payload)
+      let newState = [...state.shop_product]
+      if (index >= 0) {
+        newState.splice(index, 1);
+      }
       return {
         ...state,
-         shop_product: state.shop_product.filter(shop_product => shop_product.id !== action.payload)
+         shop_product: newState
       };
     
     case ACTION_TYPES.ADD_TO_LIKE:

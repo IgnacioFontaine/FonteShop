@@ -18,51 +18,51 @@ export default function ProductCard({ product }) {
   const { id, title, description, price, category, thumbnail } = product;
 
   const dispatch = useDispatch()
-  const [isShop, setIsShop] = useState(false);
-  const [isFav, setIsFav] = useState(false);
+  // const [isShop, setIsShop] = useState(false);
+  // const [isFav, setIsFav] = useState(false);
 
   //Manejo Favoritos
-  const handleFavorite = () => {
-    if (isFav) {
-      setIsFav(false);
-      removeToLike(id);
-    } else {
-      setIsFav(true);
-      addToLike(product);
-    }
-  };
+  // const handleFavorite = () => {
+  //   if (isFav) {
+  //     setIsFav(false);
+  //     removeToLike(id);
+  //   } else {
+  //     setIsFav(true);
+  //     addToLike(product);
+  //   }
+  // };
 
-  const favoriteButton = () => {
-    return (isFav ?
-      ( <IconButton aria-label="remoove to favorites" onClick = {() => dispatch(removeToLike(product))}>
-          <FavoriteBorderIcon  />
-        </IconButton>)
-    :
-      ( <IconButton aria-label="add to favorites" onClick = {() => dispatch(addToLike(product))}>
-          <FavoriteIcon  />
-        </IconButton>))}
+  // const favoriteButton = (product) => {
+  //   return (isFav ?
+  //     ( <IconButton aria-label="remoove to favorites" onClick = {() => dispatch(removeToLike(product.id))}>
+  //         <FavoriteBorderIcon  />
+  //       </IconButton>)
+  //   :
+  //     ( <IconButton aria-label="add to favorites" onClick = {() => dispatch(addToLike(product))}>
+  //         <FavoriteIcon  />
+  //       </IconButton>))}
 
 
-  //Manejo Compras
-  const handleShop = () => {
-    if (isFav) {
-      setIsShop(false);
-      removeToShop(id);
-    } else {
-      setIsShop(true);
-      addToShop(product);
-    }
-  };
+  // //Manejo Compras
+  // const handleShop = () => {
+  //   if (isFav) {
+  //     setIsShop(false);
+  //     removeToShop(id);
+  //   } else {
+  //     setIsShop(true);
+  //     addToShop(product);
+  //   }
+  // };
   
-const shopButton = (product) => {
-    return (isShop ?
-      ( <IconButton aria-label="remoove to shop" onClick = {() => dispatch(removeToLike(product.id))}>
-          <RemoveShoppingCartIcon  />
-        </IconButton>)
-    :
-      ( <IconButton aria-label="add to shop" onClick = {() => dispatch(addToShop(product))}>
-          <AddShoppingCartIcon />
-        </IconButton>))}
+  // const shopButton = (product) => {
+  //   return (isShop ?
+  //     ( <IconButton aria-label="remoove to shop" onClick = {() => dispatch(removeToLike(product.id))}>
+  //         <RemoveShoppingCartIcon  />
+  //       </IconButton>)
+  //   :
+  //     ( <IconButton aria-label="add to shop" onClick = {() => dispatch(addToShop(product))}>
+  //         <AddShoppingCartIcon />
+  //       </IconButton>))}
 
 
   return (

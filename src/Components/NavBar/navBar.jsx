@@ -127,7 +127,7 @@ export default function NavBar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show purchease products" color="inherit">
-          <Badge badgeContent={purchease_products.length} color="error">
+          <Badge badgeContent={purchease_products?.length} color="error">
             <ShoppingCartIcon onClick={()=>navigate("/purchease")}/>
           </Badge>
         </IconButton>
@@ -139,7 +139,7 @@ export default function NavBar() {
           aria-label="show favorite products"
           color="inherit"
         >
-          <Badge badgeContent={favorites_store.length} color="error">
+          <Badge badgeContent={favorites_store?.length} color="error">
             <FavoriteIcon onClick={()=>navigate("/favorites")} />
           </Badge>
         </IconButton>
@@ -188,7 +188,7 @@ export default function NavBar() {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show purchease_products" color="inherit">
-              <Badge badgeContent={purchease_products.length} color="error">
+              <Badge badgeContent={purchease_products?.length} color="error">
                 <ShoppingCartIcon onClick={()=>navigate("/purchease")}/>
               </Badge>
             </IconButton>
@@ -197,7 +197,7 @@ export default function NavBar() {
               aria-label="show favorite products"
               color="inherit"
             >
-              <Badge badgeContent={favorites_store.length} color="error">
+              <Badge badgeContent={favorites_store?.length} color="error">
                 <FavoriteIcon onClick={()=>navigate("/favorites")} />
               </Badge>
             </IconButton>
