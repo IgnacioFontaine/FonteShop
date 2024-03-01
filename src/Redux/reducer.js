@@ -21,7 +21,7 @@ const reducer = (state = initialState, action) => {
       }
     
     case ACTION_TYPES.REMOVE_TO_SHOP:
-      const index = state.shop_product.findIndex(shopItem => shopItem.id == action.payload)
+      const index = state.shop_product.findIndex(shopItem => shopItem.id == action.payload.id)
       let newState = [...state.shop_product]
       if (index >= 0) {
         newState.splice(index, 1);
@@ -37,7 +37,7 @@ const reducer = (state = initialState, action) => {
         like_products:[...state.like_products, action.payload]
       }
     case ACTION_TYPES.REMOVE_TO_LIKE:
-      const indexLike = state.like_products.findIndex(likeItem => likeItem.id == action.payload)
+      const indexLike = state.like_products.findIndex(likeItem => likeItem.id == action.payload.id)
       let newStateLike = [...state.like_products]
       if (indexLike >= 0) {
         newStateLike.splice(indexLike, 1);

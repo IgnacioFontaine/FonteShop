@@ -45,7 +45,7 @@ export const removeToShop = (id) => {
     try {
       dispatch({
         type: ACTION_TYPES.REMOVE_TO_SHOP,
-        payload: id,
+        payload: {id},
       });
     } catch (error) {
       return dispatch({ type: ACTION_TYPES.ERROR, payload: error });
@@ -98,7 +98,7 @@ export const removeToLike = (id) => {
     try {
       dispatch({
         type: ACTION_TYPES.REMOVE_TO_LIKE,
-        payload: id,
+        payload: {id},
       });
     } catch (error) {
       return dispatch({ type: ACTION_TYPES.ERROR, payload: error });

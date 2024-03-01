@@ -30,6 +30,7 @@ export default function ProductCard({ product }) {
       setIsFav(true);
       addToLike(product);
     }
+    return isFav;
   };
 
   function  FavoriteButton ({id}){
@@ -45,18 +46,19 @@ export default function ProductCard({ product }) {
 
   // //Manejo Compras
   const handleShop = (id) => {
-    if (isFav) {
+    if (isShop) {
       setIsShop(false);
       removeToShop(id);
     } else {
       setIsShop(true);
       addToShop(product);
     }
+    return isShop;
   };
   
-  const shopButton = ({id}) => {
+  function ShopButton ({id}){
     return (isShop ?
-      ( <IconButton aria-label="remoove to shop" onClick = {() => (dispatch(removeToLike(id), handleShop(id)))}>
+      ( <IconButton aria-label="remoove to shop" onClick = {() => (dispatch(removeToShop(id), handleShop(id)))}>
           <RemoveShoppingCartIcon  />
         </IconButton>)
     :
@@ -87,9 +89,10 @@ export default function ProductCard({ product }) {
           <FavoriteIcon  />
         </IconButton> */}
           <FavoriteButton product={product} />
-        <IconButton aria-label="shop"  onClick={()=>dispatch(addToShop(product))}>
+        {/* <IconButton aria-label="shop"  onClick={()=>dispatch(addToShop(product))}>
           <AddShoppingCartIcon />
-        </IconButton>
+        </IconButton> */}
+          <ShopButton product={product} />
         <CardContent>
         <Typography variant="h6" color="text.secondary" >
           ${product.price}
