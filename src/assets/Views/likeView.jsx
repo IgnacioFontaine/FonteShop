@@ -8,13 +8,13 @@ export default function LikedView() {
   const favorite_products = subscribe_store.products.like_products;
 
   function LikeProducts() {
-    return (<Box sx={{ minHeight:250}}>
+    return (<>
       {favorite_products.map((item)=> (
-        <Grid item xs={12} sm={8} md={6} lg={4} key={item.id}>
+        <Grid item xs={12} sm={8} md={6} lg={4} key={item.id} sx={{minHeight:472}} >
             <ProductCard  product={item} />
           </Grid>
         ))}
-    </Box>)
+    </>)
   }
     
   return (
@@ -28,9 +28,6 @@ export default function LikedView() {
         <Grid item xs={12} sm={8} md={9} container spacing={3} sx={{ ml: 7, minHeight:250}} >
           {favorite_products.length >0 ?
           <LikeProducts />:<Typography variant="h2"fontFamily={"fantasy"} sx={{height:472, width:460, textAlign:"center", justifyContent:"center"}}>Not Favorites yet</Typography>}
-        </Grid>
-        <Grid item xs={12} sm={8} md={9}>
-          <Typography variant="h4" fontFamily={"fantasy"}>They can be Yours!</Typography>
         </Grid>
       </Grid>
     </div>

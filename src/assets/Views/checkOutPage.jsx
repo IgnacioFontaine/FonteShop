@@ -11,14 +11,14 @@ export default function CheckOutPage() {
   const purchease_products = subscribe_store.products.shop_product;
 
   function ShopProducts() {
-    return (<Box sx={{  minHeight:250 }}>
+    return (< >
       {purchease_products.map((item)=> (
         <Grid item xs={12} sm={8} md={6} lg={4} key={item.id}>
             <CheckOutCard key={item.id} product={item} />
           </Grid>
         ))}
       
-    </Box>)
+    </>)
   }
     
   return (
@@ -29,7 +29,7 @@ export default function CheckOutPage() {
         </Grid>
         <Grid item xs={12} sm={8} md={9} container spacing={2} sx={{  minHeight:250, p:1.5 }}  >
           {purchease_products.length >0 ?
-          <ShopProducts  />:<Typography variant="h2"fontFamily={"fantasy"} sx={{height:550, width:550, textAlign:"center", justifyContent:"center"}}>Return to buy products!</Typography>}
+          <ShopProducts  />:<Typography variant="h2"fontFamily={"fantasy"} >Return to buy products!</Typography>}
           
         </Grid>
         <Grid item xs={12} sm={4} md={3} sx={{alignContent:"center"}}>
