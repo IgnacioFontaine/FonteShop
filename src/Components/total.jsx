@@ -3,6 +3,7 @@ import { Box, Typography, Button } from "@mui/material"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
+import axios from "axios"
 
 
 
@@ -16,29 +17,39 @@ export function Total() {
 
   //MercadoPago
   const [preferenceId, setPreferenceId] = useState(null);
-  initMercadoPago('YOUR_PUBLIC_KEY');
+  initMercadoPago('YOUR_PUBLIC_KEY', {
+    locale:"es-AR",
+  });
 
-  const createPreference = async () => {
-    try {
-      const response = await axios.post("http://localhost:8080/create_preference", {
-        description: "FonteShop Purchease",
-        price: total_price,
-        quantiti:1,
-      })
+    const createPreference = async () => {
+      try {
+        const response = await axios.post("http://localhost:3000/create_preference", {
+          description: "FonteShop Purchease",
+          price: total_price,
+          quantiti:1,
+        })
 
-      const { id } = response.data;
-      return id;
-    } catch (error) {
-      console.log(error);
-    }
+        const { id } = response.data;
+        return id;
+      } catch (error) {
+        console.log(error);
+      }
   }
+  
+  const handleBuy = async () => {
+    const id = await createPreference();
+    if (id) {
+      setPreferenceId(id)
+    }
+  };
 
     return (
       <Box container sx={{ maxWidth: 400, maxHeight:450, backgroundColor:'#FFA657', color: "black", borderRadius: 2, boxShadow: 6, p:1, mr:2  }}>
             <Typography variant="h4" fontFamily={"fantasy"}>Purchase Summary</Typography>
         <Typography variant="h5">Items: {purchease_products?.length}</Typography>
         <Typography variant="h5">Total: ${total_price && total_price}</Typography>
-            <Button variant="contained" sx={{bgcolor:"#FEDDBF", color:"black", ":hover":{bgcolor:'#FFA657', color:"white"}}} onClick={()=>navigate("/checkOut")}>Continue</Button>
-          </Box>
+        <Button variant="contained" sx={{ bgcolor: "#FEDDBF", color: "black", ":hover": { bgcolor: '#FFA657', color: "white" } }} onClick={handleBuy}>Continue</Button>
+        {preferenceId && <Wallet initialization={{ preferenceId: preferenceId }}  />}
+      </Box>
     )
   }
