@@ -15,7 +15,7 @@ export function Total() {
             <Typography variant="h4" fontFamily={"fantasy"}>Purchase Summary</Typography>
         <Typography variant="h5">Items: {purchease_products?.length}</Typography>
         <Typography variant="h5">Total: ${total_price && total_price}</Typography>
-            <Button variant="contained" sx={{bgcolor:"#FEDDBF", color:"black", ":hover":{bgcolor:'#FFA657', color:"white"}}} onClick={navigate("/checkOut")}>Continue</Button>
+            <Button variant="contained" sx={{bgcolor:"#FEDDBF", color:"black", ":hover":{bgcolor:'#FFA657', color:"white"}}} onClick={()=>navigate("/checkOut")}>Continue</Button>
           </Box>
     )
   }

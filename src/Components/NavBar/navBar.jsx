@@ -17,7 +17,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useNavigate } from 'react-router-dom';
 import store from '../../Redux/store';
 import { auth } from '../../firebase';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { removeStore } from '../../Redux/actions';
 
 const Search = styled('div')(({ theme }) => ({

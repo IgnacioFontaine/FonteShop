@@ -9,7 +9,6 @@ export default function CheckOutPage() {
   const subscribe_store = store.getState()
   
   const purchease_products = subscribe_store.products.shop_product;
-  console.log(purchease_products.length);
 
   function ShopProducts() {
     return (<>
