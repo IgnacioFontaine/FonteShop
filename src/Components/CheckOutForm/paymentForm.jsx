@@ -8,7 +8,7 @@ import Checkbox from '@mui/material/Checkbox';
 export default function PaymentForm() {
   return (
     <>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6" gutterBottom fontFamily={"fantasy"}>
         Payment method
       </Typography>
       <Grid container spacing={3}>
