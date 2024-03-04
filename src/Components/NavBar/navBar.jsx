@@ -17,9 +17,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useNavigate } from 'react-router-dom';
 import store from '../../Redux/store';
 import { auth } from '../../firebase';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeStore } from '../../Redux/actions';
-import { useEffect } from 'react';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -62,14 +61,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function NavBar() {
-    const subscribe_store = store.getState()
-    const purchease_products = subscribe_store.products.shop_product;
-    const favorites_store = subscribe_store.products.like_products;
-    const user_store = subscribe_store.products.user;
-
-
-
-
+  const subscribe_store = store.getState()
+  const purchease_products = subscribe_store?.products?.shop_product;
+  const favorites_store = subscribe_store?.products?.like_products;
+  const user_store = subscribe_store?.products.user;
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -161,7 +156,7 @@ export default function NavBar() {
         <p>Me Gusta</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
-        {/* {user_store ? (
+        {user_store ? (
           <div>
             <IconButton
             size="large"
@@ -171,7 +166,7 @@ export default function NavBar() {
             color="inherit"
             onClick={handleOut}
             >
-              <AccountCircle />
+              {/* <AccountCircle /> */}
             </IconButton>
             <p>{user_store}</p>
           </div>
@@ -189,29 +184,7 @@ export default function NavBar() {
             </IconButton>
             <p>Perfil</p>
           </div>
-        )} */}
-        <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="primary-search-account-menu"
-            aria-haspopup="true"
-            color="inherit"
-            onClick={()=>navigate("/singIn")}
-            >
-              <AccountCircle />
-            </IconButton>
-            <p>Perfil</p>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-          onClick={()=>navigate("/singIn")}
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Perfil</p>
+        )}
       </MenuItem>
     </Menu>
   );
