@@ -54,6 +54,16 @@ const reducer = (state = initialState, action) => {
         user:action.payload
       }
     
+    case ACTION_TYPES.REMOVE_STORE:
+      return {
+        ...state,
+        all_products: [],
+        like_products: [],
+        shop_product: [],
+        category_product: [],
+        user: null,
+      }
+    
     case ACTION_TYPES.ERROR:
       return {
         ...state,
