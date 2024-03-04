@@ -46,7 +46,8 @@ export default function SignIn() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            p:5.7
+            p: 5.7,
+            marginBottom:10
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: '#FFA657', color:"black" }}>
@@ -94,11 +95,6 @@ export default function SignIn() {
               Sign In
             </Button>
             <Grid container sx={{mt:3}}>
-              <Grid item xs>
-                <Link href="#" variant="body2" sx={{textDecoration:"none"}}>
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
                 <Link href="/singUp" variant="body2" sx={{textDecoration:"none"}}>
                   {"Don't have an account? Sign Up"}

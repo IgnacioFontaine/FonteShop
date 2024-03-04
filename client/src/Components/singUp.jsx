@@ -52,13 +52,13 @@ export default function SignUp() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            p:9.2
+            p:9.1
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: '#FFA657', color:"black" }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5" fontFamily={"fantasy"}>
+          <Typography component="h1" variant="h3" fontFamily={"fantasy"}>
             Sign up
           </Typography>
           <Box component="form" noValidate sx={{ mt: 3 }}>
