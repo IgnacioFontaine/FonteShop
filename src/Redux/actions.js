@@ -106,3 +106,19 @@ export const removeToLike = (id) => {
   };
 };
 
+//User actions
+
+export const setUser = (user) => {
+  
+  return async (dispatch) => {
+    try {
+      dispatch({
+        type: ACTION_TYPES.SET_USER,
+        payload: user,
+      });
+    } catch (error) {
+      return dispatch({ type: ACTION_TYPES.ERROR, payload: error });
+    }
+  };
+};
+

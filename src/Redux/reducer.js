@@ -48,6 +48,12 @@ const reducer = (state = initialState, action) => {
          like_product: newStateLike
       };
     
+    case ACTION_TYPES.SET_USER:
+      return {
+        ...state,
+        user:action.payload
+      }
+    
     case ACTION_TYPES.ERROR:
       return {
         ...state,
