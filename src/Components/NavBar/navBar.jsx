@@ -107,7 +107,13 @@ export default function NavBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={()=>(navigate("/singIn"),handleMenuClose)} >Sing In</MenuItem>
+      {user_store ?
+        (
+        <MenuItem onClick={handleOut} >Sing Out</MenuItem>
+        )
+        :
+        (<MenuItem onClick={()=>(navigate("/singIn"),handleMenuClose)} >Sing In</MenuItem>)}
+      
     </Menu>
   );
 
@@ -149,6 +155,35 @@ export default function NavBar() {
         <p>Me Gusta</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
+        {user_store ? (
+          <Box>
+            <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="primary-search-account-menu"
+            aria-haspopup="true"
+            color="inherit"
+            onClick={handleOut}
+            >
+              <AccountCircle />
+            </IconButton>
+            <p>{user_store}</p>
+          </Box>
+        ) : (
+            <Box>
+            <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="primary-search-account-menu"
+            aria-haspopup="true"
+            color="inherit"
+            onClick={()=>navigate("/singIn")}
+            >
+              <AccountCircle />
+            </IconButton>
+            <p>Perfil</p>
+          </Box>
+        )}
         <IconButton
           size="large"
           aria-label="account of current user"
