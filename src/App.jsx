@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 import { auth } from './firebase';
 import { useDispatch } from 'react-redux';
 import { setUser } from './Redux/actions';
+import Checkout from './Components/CheckOutForm/checkOut';
 
 
 function App() {
@@ -35,7 +36,8 @@ function App() {
           <Route path="/purchease" element={<CheckOutPage />} />
           <Route path="/favorites" element={<LikedView />} />
           <Route path="/singIn" element={<SingInView />} />
-          <Route path="/singUp" element={<SingUpView/>} />
+          <Route path="/singUp" element={<SingUpView />} />
+          <Route path="/checkOut" element={<Checkout />} />
           <Route path="*" element={<Error />}  />
         </Routes>
       <Footer />
