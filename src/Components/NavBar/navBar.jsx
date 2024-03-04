@@ -16,6 +16,8 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useNavigate } from 'react-router-dom';
 import store from '../../Redux/store';
+import { auth } from '../../firebase';
+import { useDispatch } from 'react-redux';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -61,6 +63,7 @@ export default function NavBar() {
     const subscribe_store = store.getState()
     const purchease_products = subscribe_store.products.shop_product;
     const favorites_store = subscribe_store.products.like_products;
+  const user_store = subscribe_store.products.user;
   
 
 
@@ -161,7 +164,16 @@ export default function NavBar() {
     </Menu>
   );
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  function handleOut() {
+    if (user_store) {
+      auth.signOut();
+      dispatch(removeStore())
+      navigate("/")
+    }
+  }
 
   return (
     <Box sx={{ flexGrow: 1, backgroundColor:"#FFA657" }}>

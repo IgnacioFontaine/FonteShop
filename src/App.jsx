@@ -9,9 +9,25 @@ import Error from './assets/Views/error';
 import LikedView from './assets/Views/likeView';
 import SingInView from './assets/Views/singInView';
 import SingUpView from './assets/Views/singUpView';
+import { useEffect } from 'react';
+import { auth } from './firebase';
+import { useDispatch } from 'react-redux';
+import { setUser } from './Redux/actions';
 
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      console.log(authUser);
+      if (authUser) {
+        dispatch(setUser(authUser));
+      }
+    })
+  },[])
+
   return (
     <div className='app'>
       <NavBar />

@@ -1,5 +1,4 @@
 import { Grid, Typography} from "@mui/material";
-// import products from "../Data/dataProducts";
 import ProductCard from "../../Components/Product/productCard";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import store from "../../Redux/store";
