@@ -18,6 +18,8 @@ import { useNavigate } from 'react-router-dom';
 import store from '../../Redux/store';
 import { auth } from '../../firebase';
 import { useDispatch } from 'react-redux';
+import { removeStore } from '../../Redux/actions';
+import { useEffect } from 'react';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -63,8 +65,10 @@ export default function NavBar() {
     const subscribe_store = store.getState()
     const purchease_products = subscribe_store.products.shop_product;
     const favorites_store = subscribe_store.products.like_products;
-  const user_store = subscribe_store.products.user;
-  
+    const user_store = subscribe_store.products.user;
+
+
+
 
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -108,12 +112,14 @@ export default function NavBar() {
       onClose={handleMenuClose}
     >
       {user_store ?
-        (
-        <MenuItem onClick={handleOut} >Sing Out</MenuItem>
+        (<div>
+          <MenuItem  >{user_store}</MenuItem>
+          <MenuItem onClick={handleOut} >Sing Out</MenuItem>
+        </div>
         )
         :
         (<MenuItem onClick={()=>(navigate("/singIn"),handleMenuClose)} >Sing In</MenuItem>)}
-      
+      {/* <MenuItem onClick={()=>(navigate("/singIn"),handleMenuClose)} >Sing In</MenuItem> */}
     </Menu>
   );
 
@@ -155,8 +161,8 @@ export default function NavBar() {
         <p>Me Gusta</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
-        {user_store ? (
-          <Box>
+        {/* {user_store ? (
+          <div>
             <IconButton
             size="large"
             aria-label="account of current user"
@@ -168,9 +174,9 @@ export default function NavBar() {
               <AccountCircle />
             </IconButton>
             <p>{user_store}</p>
-          </Box>
+          </div>
         ) : (
-            <Box>
+            <div>
             <IconButton
             size="large"
             aria-label="account of current user"
@@ -182,8 +188,19 @@ export default function NavBar() {
               <AccountCircle />
             </IconButton>
             <p>Perfil</p>
-          </Box>
-        )}
+          </div>
+        )} */}
+        <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="primary-search-account-menu"
+            aria-haspopup="true"
+            color="inherit"
+            onClick={()=>navigate("/singIn")}
+            >
+              <AccountCircle />
+            </IconButton>
+            <p>Perfil</p>
         <IconButton
           size="large"
           aria-label="account of current user"

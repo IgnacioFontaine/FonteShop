@@ -122,3 +122,18 @@ export const setUser = (user) => {
   };
 };
 
+export const removeStore = () => {
+  return async (dispatch) => {
+    try {
+      dispatch({
+        type: ACTION_TYPES.REMOVE_STORE,
+        payload: {},
+      });
+    } catch (error) {
+      return dispatch({ type: ACTION_TYPES.ERROR, payload: error });
+    }
+  };
+};
+
+
+
