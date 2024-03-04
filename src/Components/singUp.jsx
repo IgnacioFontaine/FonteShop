@@ -101,7 +101,7 @@ export default function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2, bgcolor: '#FFA657', color: "black" }}
+              sx={{ mt: 3, mb: 2, bgcolor: '#FFA657', color: "black", ":hover": { bgcolor: '#FFA657', color: "white" } }}
               onClick={singUpFunction}
             >
               Sign Up

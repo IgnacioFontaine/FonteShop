@@ -1,4 +1,4 @@
-import { Grid, Typography} from "@mui/material";
+import { Box, Grid, Typography} from "@mui/material";
 // import products from "../Data/dataProducts";
 import CheckOutCard from "../../Components/checkOutCard";
 import { Total } from "../../Components/total";
@@ -11,14 +11,14 @@ export default function CheckOutPage() {
   const purchease_products = subscribe_store.products.shop_product;
 
   function ShopProducts() {
-    return (<>
+    return (<Box sx={{  minHeight:250 }}>
       {purchease_products.map((item)=> (
         <Grid item xs={12} sm={8} md={6} lg={4} key={item.id}>
             <CheckOutCard key={item.id} product={item} />
           </Grid>
         ))}
       
-    </>)
+    </Box>)
   }
     
   return (

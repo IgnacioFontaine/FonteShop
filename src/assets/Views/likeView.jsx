@@ -1,4 +1,4 @@
-import { Grid, Typography} from "@mui/material";
+import { Box, Grid, Typography} from "@mui/material";
 import ProductCard from "../../Components/Product/productCard";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import store from "../../Redux/store";
@@ -8,13 +8,13 @@ export default function LikedView() {
   const favorite_products = subscribe_store.products.like_products;
 
   function LikeProducts() {
-    return (<>
+    return (<Box sx={{ minHeight:250}}>
       {favorite_products.map((item)=> (
         <Grid item xs={12} sm={8} md={6} lg={4} key={item.id}>
             <ProductCard  product={item} />
           </Grid>
         ))}
-    </>)
+    </Box>)
   }
     
   return (

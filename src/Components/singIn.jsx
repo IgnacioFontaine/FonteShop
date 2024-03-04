@@ -88,7 +88,7 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 5, mb: 2, bgcolor: '#FFA657', color: "black" }}
+              sx={{ mt: 5, mb: 2, bgcolor: '#FFA657', color: "black",":hover": { bgcolor: '#FFA657', color: "white" } }}
               onClick={singInFunction}
             >
               Sign In
