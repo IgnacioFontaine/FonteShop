@@ -13,7 +13,7 @@ export default function CheckOutPage() {
   function ShopProducts() {
     return (< >
       {purchease_products.map((item)=> (
-        <Grid item xs={12} sm={8} md={6} lg={4} key={item.id}>
+        <Grid item xs={12} sm={8} md={6} lg={4} key={item.id} sx={{minHeight:472}}>
             <CheckOutCard key={item.id} product={item} />
           </Grid>
         ))}
