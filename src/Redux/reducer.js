@@ -6,6 +6,7 @@ const initialState = {
   like_products: [],
   category_product: [],
   shop_product: [],
+  user:null,
   error: false,
   errormsg: {},
 };
