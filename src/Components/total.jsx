@@ -1,8 +1,11 @@
 import { Box, Typography, Button } from "@mui/material"
 import store from "../Redux/store";
+import { useNavigate } from "react-router-dom";
 
 
 export function Total() {
+  const navigate = useNavigate()
+
   const subscribe_store = store.getState()  
   const purchease_products = subscribe_store.products.shop_product;
   const total_price = purchease_products.reduce((total, objeto) => total + objeto.price, 0);
@@ -12,7 +15,7 @@ export function Total() {
             <Typography variant="h4" fontFamily={"fantasy"}>Purchase Summary</Typography>
         <Typography variant="h5">Items: {purchease_products?.length}</Typography>
         <Typography variant="h5">Total: ${total_price && total_price}</Typography>
-            <Button variant="contained" sx={{bgcolor:"#FEDDBF", color:"black", ":hover":{bgcolor:'#FFA657', color:"white"}}} onClick={Navigate("/")}>Continue</Button>
+            <Button variant="contained" sx={{bgcolor:"#FEDDBF", color:"black", ":hover":{bgcolor:'#FFA657', color:"white"}}} onClick={navigate("/checkOut")}>Continue</Button>
           </Box>
     )
   }
