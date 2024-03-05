@@ -9,7 +9,7 @@ export default function LikedView() {
   function LikeProducts() {
     return (<>
       {favorite_products?.map((item)=> (
-        <Grid item xs={12} sm={8} md={6} lg={4} key={item.id} sx={{minHeight:472}} >
+        <Grid item key={item.id} sx={{minHeight:472, minWidth:350}} >
             <ProductLikeCard  product={item} />
           </Grid>
         ))}
@@ -24,7 +24,7 @@ export default function LikedView() {
           <Typography variant="h2" fontFamily={"fantasy"}>favorites</Typography>
           <FavoriteBorderIcon fontSize="large"/>
         </Grid>
-        <Grid item xs={12} sm={8} md={9} container spacing={3} sx={{ ml: 7, minHeight:570}} >
+        <Grid item xs={12} sm={8} md={12} container spacing={3} sx={{ ml: 7, minHeight:570}} >
           {favorite_products.length >0 ?
             <LikeProducts /> : (
               <Box sx={{minHeight:540}}>

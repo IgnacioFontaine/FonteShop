@@ -39,7 +39,7 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={defaultTheme}  >
-      <Container  component="main" maxWidth="xs" >
+      <Container  component="main" maxWidth="xs" xs={12} sm={8} md={12} >
         <Box
           sx={{
             marginTop: 8,
