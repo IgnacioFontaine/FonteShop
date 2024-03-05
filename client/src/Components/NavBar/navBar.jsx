@@ -16,12 +16,17 @@ import store from '../../Redux/store';
 import { auth } from '../../firebase';
 import { useDispatch} from 'react-redux';
 import { removeStore } from '../../Redux/actions';
+import { useSelector } from 'react-redux';
 
 export default function NavBar() {
   const subscribe_store = store.getState()
   const purchease_products = subscribe_store?.products?.shop_product;
   const favorites_store = subscribe_store?.products?.like_products;
   const user_store = subscribe_store?.products.user;
+
+  const products_favorites = useSelector((state) => state.products.like_products);
+  const products_shop = useSelector((state) => state.products.shop_product);
+  console.log(products_shop);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -93,7 +98,7 @@ export default function NavBar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show purchease products" color="inherit">
-          <Badge badgeContent={purchease_products?.length} color="error">
+          <Badge badgeContent={products_shop?.length} color="error">
             <ShoppingCartIcon onClick={()=>navigate("/purchease")}/>
           </Badge>
         </IconButton>
@@ -105,7 +110,7 @@ export default function NavBar() {
           aria-label="show favorite products"
           color="inherit"
         >
-          <Badge badgeContent={favorites_store?.length} color="error">
+          <Badge badgeContent={products_favorites?.length} color="error">
             <FavoriteIcon onClick={()=>navigate("/favorites")} />
           </Badge>
         </IconButton>
@@ -172,7 +177,7 @@ export default function NavBar() {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show purchease_products" color="inherit">
-              <Badge badgeContent={purchease_products?.length} color="error">
+              <Badge badgeContent={products_shop?.length} color="error">
                 <ShoppingCartIcon onClick={()=>navigate("/purchease")}/>
               </Badge>
             </IconButton>
@@ -181,7 +186,7 @@ export default function NavBar() {
               aria-label="show favorite products"
               color="inherit"
             >
-              <Badge badgeContent={favorites_store?.length} color="error">
+              <Badge badgeContent={products_favorites?.length} color="error">
                 <FavoriteIcon onClick={()=>navigate("/favorites")} />
               </Badge>
             </IconButton>
