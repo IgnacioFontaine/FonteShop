@@ -6,18 +6,14 @@ import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { removeToLike, removeToShop, addToShop } from '../../Redux/actions';
+import { removeToLike } from '../../Redux/actions';
 import { useDispatch } from 'react-redux';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
-import { useSelector } from 'react-redux'; 
-import { useState } from 'react';
+
 
 
 export default function ProductLikeCard({ product }) {
   const { id, title, description, price, category, thumbnail } = product;
   const dispatch = useDispatch()
-
   
   return (
     <Card sx={{ maxWidth: 300, maxHeight:400, backgroundColor:'#FFA657' }} key={id}>
