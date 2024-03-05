@@ -9,6 +9,7 @@ import Error from './assets/Views/error';
 import LikedView from './assets/Views/likeView';
 import SingInView from './assets/Views/singInView';
 import SingUpView from './assets/Views/singUpView';
+import { IsAuthGuard } from './Components/isAuth';
 import { useEffect } from 'react';
 import { auth } from './firebase';
 import { useDispatch } from 'react-redux';
@@ -32,7 +33,7 @@ function App() {
       <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/purchease" element={<CheckOutPage />} />
+          <Route path="/purchease" element={ <IsAuthGuard /> } />
           <Route path="/favorites" element={<LikedView />} />
           <Route path="/singIn" element={<SingInView />} />
           <Route path="/singUp" element={<SingUpView />} />
