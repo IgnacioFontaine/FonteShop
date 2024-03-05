@@ -12,10 +12,17 @@ import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import { useDispatch } from 'react-redux';
 import { addToLike, addToShop, removeToLike, removeToShop } from '../../Redux/actions';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 
 export default function ProductCard({ product }) {
   const { id, title, description, price, category, thumbnail } = product;
+
+  const purchease_products = useSelector((state) => state.products.shop_product);
+  const favorite_products = useSelector((state) => state.products.like_products);
+
+  const containsPurchease = purchease_products.some(obj => obj.id === id);
+  const containsFavorite = favorite_products.some(obj => obj.id === id);
 
   const dispatch = useDispatch()
   const [isShop, setIsShop] = useState(false);
@@ -33,13 +40,13 @@ export default function ProductCard({ product }) {
     return isFav;
   };
 
-  function  FavoriteButton (id){
-    return (isFav ?
-      ( <IconButton aria-label="remoove to favorites" onClick = {() =>( dispatch(removeToLike(id), handleFavorite(id)))}>
+  function  FavoriteButton ({product}){
+    return (containsFavorite ?
+      ( <IconButton aria-label="remoove to favorites" onClick = {() =>( dispatch(removeToLike(product.id), handleFavorite(product.id)))}>
           <FavoriteIcon  />
         </IconButton>)
     :
-      (<IconButton aria-label="add to favorites" onClick={() => (dispatch(addToLike(product), handleFavorite(id)))}>
+      (<IconButton aria-label="add to favorites" onClick={() => (dispatch(addToLike(product), handleFavorite(product.id)))}>
           <FavoriteBorderIcon  />
         </IconButton>))}
 
@@ -56,13 +63,13 @@ export default function ProductCard({ product }) {
     return isShop;
   };
   
-  function ShopButton (id){
-    return (isShop ?
-      ( <IconButton aria-label="remoove to shop" onClick = {() => (dispatch(removeToShop(id), handleShop(id)))}>
+  function ShopButton ({product}){
+    return (containsPurchease ?
+      ( <IconButton aria-label="remoove to shop" onClick = {() => (dispatch(removeToShop(product.id), handleShop(product.id)))}>
           <RemoveShoppingCartIcon  />
         </IconButton>)
     :
-      ( <IconButton aria-label="add to shop" onClick = {() => (dispatch(addToShop(product)), handleShop(id))}>
+      ( <IconButton aria-label="add to shop" onClick = {() => (dispatch(addToShop(product)), handleShop(product.id))}>
           <AddShoppingCartIcon />
         </IconButton>))}
 
