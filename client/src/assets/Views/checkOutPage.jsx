@@ -1,14 +1,10 @@
 import { Box, Grid, Typography} from "@mui/material";
-// import products from "../Data/dataProducts";
 import CheckOutCard from "../../Components/checkOutCard";
 import { Total } from "../../Components/total";
-// import { useSelector } from "react-redux";
-import store from "../../Redux/store";
+import { useSelector } from "react-redux";
 
 export default function CheckOutPage() {
-  const subscribe_store = store.getState()
-  
-  const purchease_products = subscribe_store.products.shop_product;
+  const purchease_products = useSelector((state) => state.products.shop_product);
 
   function ShopProducts() {
     return (< >

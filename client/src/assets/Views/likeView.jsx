@@ -1,11 +1,10 @@
 import { Box, Grid, Typography} from "@mui/material";
 import ProductCard from "../../Components/Product/productCard";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import store from "../../Redux/store";
+import { useSelector } from 'react-redux';
 
 export default function LikedView() {
-  const subscribe_store = store.getState()
-  const favorite_products = subscribe_store.products.like_products;
+  const favorite_products = useSelector((state) => state.products.like_products);
 
   function LikeProducts() {
     return (<>

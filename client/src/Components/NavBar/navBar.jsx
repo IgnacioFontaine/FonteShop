@@ -20,13 +20,10 @@ import { useSelector } from 'react-redux';
 
 export default function NavBar() {
   const subscribe_store = store.getState()
-  const purchease_products = subscribe_store?.products?.shop_product;
-  const favorites_store = subscribe_store?.products?.like_products;
   const user_store = subscribe_store?.products.user;
 
   const products_favorites = useSelector((state) => state.products.like_products);
   const products_shop = useSelector((state) => state.products.shop_product);
-  console.log(products_shop);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
