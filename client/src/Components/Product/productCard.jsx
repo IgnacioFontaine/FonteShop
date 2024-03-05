@@ -44,7 +44,7 @@ export default function ProductCard({ product }) {
         </IconButton>))}
 
 
-  // //Manejo Compras
+  //Manejo Compras
   const handleShop = (id) => {
     if (isShop) {
       setIsShop(false);
