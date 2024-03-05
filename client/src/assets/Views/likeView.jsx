@@ -1,5 +1,5 @@
 import { Box, Grid, Typography} from "@mui/material";
-import ProductCard from "../../Components/Product/productCard";
+import ProductLikeCard from "../../Components/Product/productLike";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useSelector } from 'react-redux';
 
@@ -8,9 +8,9 @@ export default function LikedView() {
 
   function LikeProducts() {
     return (<>
-      {favorite_products.map((item)=> (
+      {favorite_products?.map((item)=> (
         <Grid item xs={12} sm={8} md={6} lg={4} key={item.id} sx={{minHeight:472}} >
-            <ProductCard  product={item} />
+            <ProductLikeCard  product={item} />
           </Grid>
         ))}
     </>)
