@@ -19,33 +19,6 @@ export default function ProductLikeCard({ product }) {
   const dispatch = useDispatch()
 
   
-  const [isShop, setIsShop] = useState(false);
-  const products_shop = useSelector((state) => state.products.shop_product);
-
-  const containsObject = products_shop.some(obj => obj.id === id);
-
-  //Manejo Compras
-  const handleShop = (id) => {
-    if (containsObject) {
-      setIsShop(false);
-      removeToShop(id);
-    } else {
-      setIsShop(true);
-      addToShop(product);
-    }
-    return isShop;
-  };
-
-  function ShopButton ({id}){
-    return (isShop ?
-      ( <IconButton aria-label="remoove to shop" onClick = {() => (dispatch(removeToShop(id), handleShop(id)))}>
-          <RemoveShoppingCartIcon  />
-        </IconButton>)
-    :
-      ( <IconButton aria-label="add to shop" onClick = {() => (dispatch(addToShop(product)), handleShop(id))}>
-          <AddShoppingCartIcon />
-        </IconButton>))}
-
   return (
     <Card sx={{ maxWidth: 300, maxHeight:400, backgroundColor:'#FFA657' }} key={id}>
       <CardHeader
@@ -68,7 +41,6 @@ export default function ProductLikeCard({ product }) {
           <IconButton aria-label="remoove to favorites" onClick = {() =>( dispatch(removeToLike(id)))}>
             <FavoriteIcon  />
           </IconButton>
-          <ShopButton />
         <CardContent>
         <Typography variant="h6" color="text.secondary" >
           ${product.price}

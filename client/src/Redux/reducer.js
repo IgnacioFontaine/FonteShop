@@ -45,7 +45,7 @@ const reducer = (state = initialState, action) => {
       }
       return {
         ...state,
-         like_product: newStateLike
+         like_products: newStateLike
       };
     
     case ACTION_TYPES.SET_USER:

@@ -33,7 +33,7 @@ export default function ProductCard({ product }) {
     return isFav;
   };
 
-  function  FavoriteButton ({id}){
+  function  FavoriteButton (id){
     return (isFav ?
       ( <IconButton aria-label="remoove to favorites" onClick = {() =>( dispatch(removeToLike(id), handleFavorite(id)))}>
           <FavoriteIcon  />
@@ -56,7 +56,7 @@ export default function ProductCard({ product }) {
     return isShop;
   };
   
-  function ShopButton ({id}){
+  function ShopButton (id){
     return (isShop ?
       ( <IconButton aria-label="remoove to shop" onClick = {() => (dispatch(removeToShop(id), handleShop(id)))}>
           <RemoveShoppingCartIcon  />
@@ -86,8 +86,8 @@ export default function ProductCard({ product }) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={{alignContent:"center", justifyContent:"space-evenly"}}>
-          <FavoriteButton product={product} />
-          <ShopButton product={product} />
+          <FavoriteButton product={product} id={id} />
+          <ShopButton product={product} id={id} />
         <CardContent>
         <Typography variant="h6" color="text.secondary" >
           ${product.price}
