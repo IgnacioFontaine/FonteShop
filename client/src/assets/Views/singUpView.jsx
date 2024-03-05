@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 
 export default function SingUpView() {
   return (
-    <Box sx={{ width: 1360 }}>
+    <Box xs={12} sm={12} md={12}>
       <SignUp/>
     </Box>
   )
