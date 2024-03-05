@@ -72,6 +72,7 @@ export default function ProductCard({ product }) {
       <CardHeader
         title={product.title}
         subheader={product.category}
+        sx={{fontFamily:"fantasy"}}
       />
       <CardMedia
         component="img"
@@ -80,18 +81,12 @@ export default function ProductCard({ product }) {
         alt={product.title}
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary" sx={{maxHeight:40}}>
+        <Typography variant="body2" color="text.secondary" sx={{maxHeight:20}}>
           {product.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={{alignContent:"center", justifyContent:"space-evenly"}}>
-        {/* <IconButton aria-label="add to favorites" onClick={() => dispatch(addToLike(product))}>
-          <FavoriteIcon  />
-        </IconButton> */}
           <FavoriteButton product={product} />
-        {/* <IconButton aria-label="shop"  onClick={()=>dispatch(addToShop(product))}>
-          <AddShoppingCartIcon />
-        </IconButton> */}
           <ShopButton product={product} />
         <CardContent>
         <Typography variant="h6" color="text.secondary" >

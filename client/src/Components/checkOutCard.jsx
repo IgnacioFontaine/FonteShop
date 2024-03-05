@@ -10,7 +10,6 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import { removeToShop } from '../Redux/actions';
 import { useDispatch } from 'react-redux';
 
-
 export default function CheckOutCard({product}) {
   const { id, title, description, price, rating, thumbnail, stock } = product;
   const dispatch = useDispatch()

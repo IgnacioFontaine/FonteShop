@@ -21,7 +21,7 @@
 }
 
 .card-body h5 {
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 8px;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .card-body small {
-  font-size: 12px;
+  font-size: 10px;
   color: #999;
 }
 
@@ -42,6 +42,9 @@
   align-items: center;
   margin-top: 16px;
 }
+
+
+
 
 .card-footer button {
   background-color: orange;

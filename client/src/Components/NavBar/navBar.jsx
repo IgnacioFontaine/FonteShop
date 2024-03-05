@@ -20,6 +20,7 @@ import { auth } from '../../firebase';
 import { useDispatch} from 'react-redux';
 import { removeStore } from '../../Redux/actions';
 
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -114,7 +115,6 @@ export default function NavBar() {
         )
         :
         (<MenuItem onClick={()=>(navigate("/singIn"),handleMenuClose)} >Sing In</MenuItem>)}
-      {/* <MenuItem onClick={()=>(navigate("/singIn"),handleMenuClose)} >Sing In</MenuItem> */}
     </Menu>
   );
 
@@ -166,7 +166,6 @@ export default function NavBar() {
             color="inherit"
             onClick={handleOut}
             >
-              {/* <AccountCircle /> */}
             </IconButton>
             <p>{user_store}</p>
           </div>
@@ -201,20 +200,20 @@ export default function NavBar() {
   }
 
   return (
-    <Box sx={{ flexGrow: 1, backgroundColor:"#FFA657" }}>
+    <Box sx={{ flexGrow: 1, backgroundColor:"#FFA657", }} >
       <AppBar position="static" sx={{ backgroundColor:"#FFA657" }}>
         <Toolbar>
           <Typography
             variant="h5"
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block', cursor: "pointer" } }}
+            sx={{ display: { xs: 'block', sm: 'block', cursor: "pointer" } }}
             fontFamily={"fantasy"}
             onClick={()=>navigate("/")}
           >
             FonteShop
           </Typography>
-          <Search >
+          {/* <Search >
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -222,7 +221,7 @@ export default function NavBar() {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search>
+          </Search> */}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show purchease_products" color="inherit">
