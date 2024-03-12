@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import NavBar from './Components/NavBar/navBar';
 import Home from './assets/Views/home';
 import { Footer } from './Components/footer';
-import CheckOutPage from './assets/Views/checkOutPage';
 import Error from './assets/Views/error';
 import LikedView from './assets/Views/likeView';
 import SingInView from './assets/Views/singInView';

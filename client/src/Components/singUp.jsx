@@ -18,8 +18,6 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
 
-
-
 const defaultTheme = createTheme();
 
 export default function SignUp() {

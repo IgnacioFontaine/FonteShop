@@ -9,6 +9,10 @@
   padding: 16px;
 }
 
+.card:hover {
+  transform: scale(1.05);
+}
+
 .card-header img {
   max-width: 100%;
   height: auto;

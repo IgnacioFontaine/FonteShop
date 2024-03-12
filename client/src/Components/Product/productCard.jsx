@@ -75,7 +75,11 @@ export default function ProductCard({ product }) {
 
 
   return (
-    <Card sx={{ maxWidth: 300, maxHeight:400, backgroundColor:'#FFA657' }} key={id}>
+    <Card sx={{ maxWidth: 300, maxHeight:400, backgroundColor:'#FFA657',
+    transition: 'transform 0.3s ease', 
+    '&:hover': {
+      transform: 'scale(1.02)', 
+    }}} key={id}>
       <CardHeader
         title={product.title}
         subheader={product.category}
