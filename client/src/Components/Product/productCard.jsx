@@ -83,7 +83,7 @@ export default function ProductCard({ product }) {
       <CardHeader
         title={product.title}
         subheader={product.category}
-        sx={{fontFamily:"fantasy"}}
+        titleTypographyProps={{fontFamily:"fantasy"}}
       />
       <CardMedia
         component="img"
@@ -92,7 +92,7 @@ export default function ProductCard({ product }) {
         alt={product.title}
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary" sx={{maxHeight:20}}>
+        <Typography variant="body2" color="text.secondary" sx={{maxHeight:25}}>
           {product.description}
         </Typography>
       </CardContent>
@@ -100,7 +100,7 @@ export default function ProductCard({ product }) {
           <FavoriteButton product={product} id={id} />
           <ShopButton product={product} id={id} />
         <CardContent>
-        <Typography variant="h6" color="text.secondary" >
+        <Typography variant="h5" color="text.secondary" >
           ${product.price}
         </Typography>
       </CardContent>
