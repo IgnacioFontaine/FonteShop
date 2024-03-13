@@ -2,7 +2,7 @@ import { Typography, Box } from "@mui/material";
 import products from "../assets/Data/dataProducts";
 
 const uniqueBrandsSet = new Set(products.map(item => item.brand));
-const uniqueBrandsArray = Array.from(uniqueBrandsSet);
+// const uniqueBrandsArray = Array.from(uniqueBrandsSet);
 
 console.log(uniqueBrandsSet);
 
