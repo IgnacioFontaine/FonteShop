@@ -23,7 +23,7 @@ const Companys = () => {
   }, [brands.length]);
 
   return (
-    <Box xs={12} sm={6} md={4} width={1100}>
+    <Box xs={12} sm={6} md={4} width={1135} mt="10px" >
       <div
         style={{
           display: 'flex',
