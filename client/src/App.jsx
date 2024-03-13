@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 import { auth } from './firebase';
 import { useDispatch } from 'react-redux';
 import { setUser } from './Redux/actions';
+import Dev from './assets/Views/dev';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/favorites" element={<LikedView />} />
           <Route path="/singIn" element={<SingInView />} />
           <Route path="/singUp" element={<SingUpView />} />
+          <Route path="/dev" element={<Dev />}  />
           <Route path="*" element={<Error />}  />
         </Routes>
       <Footer />
