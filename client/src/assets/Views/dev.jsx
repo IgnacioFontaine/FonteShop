@@ -1,13 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import Companys from "../../Components/companys";
+import { Products } from "../../Components/products";
 
 
 
 export default function Dev() {
   
   return (
-    <Box sx={{display:"flex", flexDirection:"column",alignItems:"center", justifyContent:"center", height:650, width:1100}}>
-      <Typography>Nada por ahora</Typography>
+    <Box >
+      <Companys></Companys>
     </Box>
   )
 }

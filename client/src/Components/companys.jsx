@@ -23,17 +23,19 @@ const Companys = () => {
   }, [brands.length]);
 
   return (
-    <Box xs={12} sm={6} md={4} width={1135} mt="10px" >
+    <Box mt="10px" >
       <div
         style={{
           display: 'flex',
-          overflow: 'hidden',
+          flexWrap:"wrap",
+          overflow:"hidden",
           whiteSpace: 'nowrap',
-          backgroundColor: "#F5C99E"
+          backgroundColor: "#F5C99E",
+          height: "75px"
         }}
       >
         {brands.map((brand, index) => (
-          <Box key={index}>
+          <Box  key={index}>
             <Typography
             key={index}
             sx={{
@@ -48,7 +50,6 @@ const Companys = () => {
             {brand}
           </Typography>
           </Box>
-          
         ))}
       </div>
     </Box>
