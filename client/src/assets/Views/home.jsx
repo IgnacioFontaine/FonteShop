@@ -8,7 +8,7 @@ export default function Home() {
     <Box sx={{ mt: 1.5, ml: 5 }}>
       <Offers />
       <Products />
-      {/* <Companys /> */}
+      <Companys />
     </Box>
   )
 }
