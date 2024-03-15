@@ -23,7 +23,7 @@ export default function CheckOutPage() {
         <Grid item xs={12}>
           <Typography variant="h2" fontFamily={"fantasy"}>Shopping Cart</Typography>
         </Grid>
-        <Grid item xs={12} sm={8} md={9} container spacing={2} sx={{  minHeight:585, p:1.5 }}  >
+        <Grid item xs={12} sm={12} md={12} container spacing={2} sx={{  minHeight:585, p:1.5 }}  >
           {purchease_products.length >0 ?
             <ShopProducts /> : (
               <Box sx={{minHeight:550}}>
