@@ -38,7 +38,7 @@ export function Offers() {
         textAlign: 'center',
         mt: 3,
         mb: 3,
-        backgroundColor: 'white',
+        backgroundColor: '#FFF3EA',
         borderRadius: 3,
         mr: 13,
         padding: '1rem', // Add padding for better spacing
