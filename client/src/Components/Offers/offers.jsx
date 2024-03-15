@@ -50,7 +50,7 @@ export function Offers() {
       }}
     >
       <Typography variant="h3" sx={{ color: '#FFA657', fontFamily: 'fantasy' }}>
-        Offers
+        ¡Offers!
       </Typography>
       <Box
         sx={{
@@ -59,7 +59,7 @@ export function Offers() {
           mt: 3,
           mb: 3,
           gap: 12,
-          flexWrap: 'wrap', // Allow products to wrap on small screens
+          flexWrap: 'wrap', 
         }}
       >
         {inOffer.map((product) => (

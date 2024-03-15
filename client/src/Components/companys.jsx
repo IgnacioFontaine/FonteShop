@@ -33,16 +33,22 @@ const Companys = () => {
         }}
       >
         {brands.map((brand, index) => (
-          <Typography
+          <Box key={index}>
+            <Typography
             key={index}
             sx={{
               m: 2,
               transform: `translateX(-${scrollPosition * 100}px)`,
-              transition: 'transform 1s ease'
+              transition: 'transform 1s ease',
+              border: "1px solid #FCE4D2",
+              borderRadius:2, 
+              p:1.1
             }}
           >
             {brand}
           </Typography>
+          </Box>
+          
         ))}
       </div>
     </Box>
