@@ -24,11 +24,11 @@ export default function LikedView() {
            <Typography variant="h2" fontFamily={"fantasy"}>Favorites</Typography>
            <FavoriteBorderIcon fontSize="large"/>
          </Grid>
-        <Grid item xs={10} sm={12} md={12} container spacing={2} sx={{  minHeight:655, p:2, minWidth:400}}   >
+        <Grid item xs={10} sm={12} md={12} container spacing={2} sx={{  minHeight:655, p:2}}   >
           {favorite_products.length >0 ?
             <LikeProducts /> : (
-              <Box sx={{minHeight:600, alignContent:"center",textAlign:"center"}}>
-                <Typography variant="h4" fontFamily={"fantasy"} sx={{textAlign:"center", justifyContent:"center", alignItems:"center"}} >Not Favorites yet</Typography>
+              <Box sx={{minHeight:600, minWidth:800, alignContent:"center",textAlign:"center"}}>
+                <Typography variant="h3" fontFamily={"fantasy"} sx={{textAlign:"center", justifyContent:"center", alignItems:"center"}} >Not Favorites yet</Typography>
               </Box>
               )}
         </Grid>
