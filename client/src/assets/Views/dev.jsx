@@ -1,5 +1,4 @@
 import { Box, Typography, keyframes } from "@mui/material";
-import "./dev.css"
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
