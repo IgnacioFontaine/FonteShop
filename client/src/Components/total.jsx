@@ -10,12 +10,6 @@ export function Total() {
   const purchease_products = subscribe_store.products.shop_product;
   const total_price = purchease_products.reduce((total, objeto) => total + objeto.price, 0);
 
-  console.log("-----------------------");
-  console.log("Cantidad: ", purchease_products.length);
-
-  const titles = purchease_products.map(producto => producto.title);
-  console.log("Titulos: ", titles);
-
   //MercadoPago
   const [preferenceId, setPreferenceId] = useState(null);
   initMercadoPago("TEST-82be574c-0090-4cdc-81d4-5535eebd3b86", {
@@ -25,8 +19,7 @@ export function Total() {
     const createPreference = async () => {
       try {
         const response = await axios.post("http://localhost:3000/create_preference", {
-          title: "FonteShop",
-          quantity:1,
+          quantity: 1,
           price: total_price,
         })
 
