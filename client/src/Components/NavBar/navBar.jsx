@@ -159,10 +159,10 @@ export default function NavBar() {
 
   return (
     <Box sx={{ flexGrow: 1, backgroundColor:"#FFA657", }} >
-      <AppBar position="static" sx={{ backgroundColor:"#FFA657" }}>
+      <AppBar position="static" sx={{ backgroundColor:"#FFA657"}}>
         <Toolbar>
           <Typography
-            variant="h5"
+            variant="h4"
             noWrap
             component="div"
             sx={{ display: { xs: 'block', sm: 'block', cursor: "pointer" } }}
