@@ -1,5 +1,5 @@
-import { Box, Typography } from "@mui/material";
-
+import { Box, Typography, keyframes } from "@mui/material";
+import "./dev.css"
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -20,22 +20,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function ResponsiveStack() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setScrollPosition(prevPosition => {
-        if (prevPosition >= brands.length) {
-          return 0;
-        } else {
-          return prevPosition + 2;
-        }
-      });
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
+  
 
   return (
     <div>
@@ -52,14 +37,8 @@ function ResponsiveStack() {
         }}
       >
         {brands && brands.map(((brand, index)=>
-          <Item key={index}
-            sx={{
-              transform: `translateX(-${scrollPosition * 100}px)`,
-              transition: 'transform 2s ease',
-              border: "1px solid #FCE4D2",
-              borderRadius:2, 
-              p:1
-            }}
+          <Item  key={index}
+
           >{brand}</Item>))}
       </Stack>
     </div>
