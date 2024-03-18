@@ -96,7 +96,7 @@ export default function SignIn() {
             </Button>
             <Grid container sx={{mt:3}}>
               <Grid item>
-                <Link href="/singUp" variant="body2" sx={{textDecoration:"none"}}>
+                <Link href="/singUp" variant="body2" sx={{textDecoration:"none", color:"black"}}>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

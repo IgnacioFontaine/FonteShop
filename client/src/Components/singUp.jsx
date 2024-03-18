@@ -43,7 +43,7 @@ export default function SignUp() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" sx={{height:685}}>
         <Box
           sx={{
             marginTop: 5.3,
@@ -106,7 +106,7 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/singIn" variant="body2" sx={{textDecoration:"none"}}>
+                <Link href="/singIn" variant="body2" sx={{textDecoration:"none", color:"black"}}>
                   Already have an account? Sign in
                 </Link>
               </Grid>
