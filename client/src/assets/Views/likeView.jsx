@@ -17,18 +17,35 @@ export default function LikedView() {
   }
     
   return (
+    // <div>
+    //   <Grid container spacing={3} sx={{mt:1}}>
+    //     <Grid item xs={12} sx={{display:"flex", justifyContent:"center", alignItems:"center", gap:1}}>
+    //       <FavoriteBorderIcon fontSize="large"/>
+    //       <Typography variant="h2" fontFamily={"fantasy"}>Favorites</Typography>
+    //       <FavoriteBorderIcon fontSize="large"/>
+    //     </Grid>
+    //     <Grid item xs={12} sm={8} md={12} container spacing={3} sx={{ ml: 7, minHeight:570}} >
+    //       {favorite_products.length >0 ?
+    //         <LikeProducts /> : (
+    //           <Box sx={{minHeight:540}}>
+    //             <Typography variant="h4" fontFamily={"fantasy"} sx={{ height: 472, width: 460, textAlign: "center", justifyContent: "center" }}>Not Favorites yet</Typography>
+    //           </Box>
+    //           )}
+    //     </Grid>
+    //   </Grid>
+    // </div>
     <div>
-      <Grid container spacing={3} sx={{mt:1}}>
-        <Grid item xs={12} sx={{display:"flex", justifyContent:"center", alignItems:"center", gap:1}}>
-          <FavoriteBorderIcon fontSize="large"/>
-          <Typography variant="h2" fontFamily={"fantasy"}>favorites</Typography>
-          <FavoriteBorderIcon fontSize="large"/>
+      <Grid container spacing={3}>
+        <Grid item xs={2}  >
+           <FavoriteBorderIcon fontSize="large"/>
+           <Typography variant="h2" fontFamily={"fantasy"}>Favorites</Typography>
+           <FavoriteBorderIcon fontSize="large"/>
         </Grid>
-        <Grid item xs={12} sm={8} md={12} container spacing={3} sx={{ ml: 7, minHeight:570}} >
+        <Grid item xs={10} sm={12} md={12} container spacing={2} sx={{  minHeight:585, p:1.5 }}  >
           {favorite_products.length >0 ?
             <LikeProducts /> : (
-              <Box sx={{minHeight:540}}>
-                <Typography variant="h2" fontFamily={"fantasy"} sx={{ height: 472, width: 460, textAlign: "center", justifyContent: "center" }}>Not Favorites yet</Typography>
+              <Box sx={{minHeight:550, alignContent:"center"}}>
+                <Typography variant="h3" fontFamily={"fantasy"} sx={{textAlign:"center", justifyContent:"center", alignItems:"center"}} >Not Favorites yet</Typography>
               </Box>
               )}
         </Grid>
