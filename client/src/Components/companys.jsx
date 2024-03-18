@@ -14,7 +14,7 @@ const Companys = () => {
         if (prevPosition >= brands.length) {
           return 0;
         } else {
-          return prevPosition + 1;
+          return prevPosition + 2;
         }
       });
     }, 1000);
@@ -33,6 +33,7 @@ const Companys = () => {
           backgroundColor: "#F5C99E",
           height: "75px"
         }}
+
       >
         {brands.map((brand, index) => (
           <Box  key={index}>
@@ -41,7 +42,7 @@ const Companys = () => {
             sx={{
               m: 2,
               transform: `translateX(-${scrollPosition * 100}px)`,
-              transition: 'transform 1s ease',
+              transition: 'transform 2s ease',
               border: "1px solid #FCE4D2",
               borderRadius:2, 
               p:1.1
