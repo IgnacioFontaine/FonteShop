@@ -19,6 +19,7 @@ export default function Error() {
   const navigate = useNavigate();
   return (
     <Box
+      xs={2} sm={6} md={12}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -28,6 +29,7 @@ export default function Error() {
         width: "150vh", 
         padding: "16px", 
       }}
+      
     >
       <Typography variant="h1" fontFamily="fantasy">
         Error 404
