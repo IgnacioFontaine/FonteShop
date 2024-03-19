@@ -12,13 +12,13 @@ export function Total() {
 
   //MercadoPago
   const [preferenceId, setPreferenceId] = useState(null);
-  initMercadoPago(import.meta.env.VITE_MERCADO_PAGO_TOKEN, {
+  initMercadoPago("TEST-82be574c-0090-4cdc-81d4-5535eebd3b86", {
     locale:"es-AR",
   });
 
     const createPreference = async () => {
       try {
-        const response = await axios.post(`${import.meta.env.VITE_CREATE_PREFERENCE}`, {
+        const response = await axios.post("http://localhost:3000/create_preference", {
           quantity: 1,
           price: total_price,
         })
